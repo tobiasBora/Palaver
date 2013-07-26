@@ -27,12 +27,29 @@ mkdir usr/bin
 cp -r ../../packaging_conf/* .
 tar -xzf "../${package_name}_${version}.orig.tar.gz" -C etc/
 ls debian/
+
+echo "If you have any error (about predefs.h), please run
+sudo apt-get install gcc-multilib
+(for cross-compiling)"
+
 # Don't words, I don't know why : (can compile source) (uses debian)
 # debuild -S -sa --lintian-opts -i
 # debuild -ai386 -us -uc 
 
 # Works but doesn't compile without script (not very proper) (uses DEBIAN)
 cd etc/palaver
+echo "Compiling without any architecture option :"
 make # This should be automatiquely executed, won't work if the computer doesn't have the good architecture
 cd ../../..
 dpkg -b "${package_name}-${version}"
+mv "${package_name}-${version}.deb" "${package_name}-${version}_this_arch.deb"
+echo "Compiling for 32 bits :"
+sed -i 's/.*ARCH.*/ARCH=-m32/' "${package_name}-${version}/etc/${package_name}/Makefile"
+dpkg -b "${package_name}-${version}"
+mv "${package_name}-${version}.deb" "${package_name}-${version}_32_bits.deb"
+
+echo "Compiling for 64 bits :"
+sed -i 's/.*ARCH.*/ARCH=-m64/' "${package_name}-${version}/etc/${package_name}/Makefile"
+dpkg -b "${package_name}-${version}"
+mv "${package_name}-${version}.deb" "${package_name}-${version}_64_bits.deb"
+
