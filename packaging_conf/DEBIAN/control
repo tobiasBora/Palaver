@@ -1,0 +1,10 @@
+Package: palaver
+Version: 0.01
+Architecture: all
+Maintainer: James McClain <jamezmcclain@gmail.com>
+Installed-Size: 2
+Depends: sox, wget, espeak, xautomation, xvkbd
+Section: extras
+Priority: optional
+Homepage: https://github.com/JamezQ/Palaver
+Description: Speech Recognition using Google API.

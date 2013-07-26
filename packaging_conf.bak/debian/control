@@ -1,0 +1,18 @@
+Source: palaver
+Section: unknown
+Priority: extra
+Maintainer: James McClain <jamezmcclain@gmail.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+Homepage: https://github.com/JamezQ/Palaver
+Vcs-Git: https://github.com/JamezQ/Palaver
+
+
+Package: palaver
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Speech Recognition using Google API.
+ This software uses Google API, and gives a way to control your
+ computer with voice. You can instead lots of plugins, and it works in
+ several languages (en, fr, es...). It is really easy to create its
+ own plugin and configure palaver.

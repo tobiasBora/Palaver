@@ -1,6 +1,6 @@
-ARCH=-m32
+# ARCH=-m32
 CC=gcc
-CFLAGS=-c -Wall -Wno-unused $(ARCH)
+CFLAGS=-c -Wall -Wno-unused
 LDFLAGS=-O3
 SOURCES=Recognition/src/dictionary.c Recognition/src/match.c Recognition/src/commands.c
 OBJECTS=$(SOURCES:.cpp=.o)
