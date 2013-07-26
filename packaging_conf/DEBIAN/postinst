@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# This program is run after the installation
+
+# Symlinks
+
+ln -sf /etc/palaver/hotkey /usr/bin/palaver_hotkey
+ln -sf /etc/palaver/first_run /usr/bin/palaver_first_run
+ln -sf /etc/palaver/install_gui /usr/bin/palaver_install_gui
+ln -sf /etc/palaver/plugins_manager /usr/bin/palaver_plugins_manager
+ln -sf /etc/palaver/plugins_sdk /usr/bin/palaver_plugins_sdk

@@ -7,8 +7,6 @@ OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=Recognition/dictionary
 
 all: $(SOURCES) $(EXECUTABLE)
-	echo "coucou"
-	touch palaver_test
 
 $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
