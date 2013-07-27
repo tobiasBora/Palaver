@@ -3,17 +3,23 @@
 # Setup speech recognition for the person.
 # Do NOT run this script as root, because it can cause problems with files rights
 
+cd "$(dirname $(readlink -f $0))"
 DIR="$(pwd)"
 
 echo Assuming all files are in "'$DIR'"
 
+echo "Removing old files..."
 rm $HOME/.palaver.d/plugins.db
 rm $HOME/.palaver.d/UserInfo
 rm $HOME/.palaver.d/configs -r
+rm -r $HOME/.palaver.d/Plugins/
+
+echo "Creating .palader.d/..."
 mkdir $HOME/.palaver.d/
 mkdir $HOME/.palaver.d/Plugins/
 touch $HOME/.palaver.d/UserInfo
 cp Recognition/config/BlankInfo $HOME/.palaver.d/UserInfo
 ./installDefault
+
 nohup Recognition/bin/goto 'http://palaver.bmandesigns.com/thanks' "nohup.out" &
 echo "Done, you will have to setup the hotkey yourself."

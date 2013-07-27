@@ -28,6 +28,8 @@ rm Recognition/bin/ -r
 rm $HOME/.palaver.d/plugins.db
 rm $HOME/.palaver.d/UserInfo
 rm $HOME/.palaver.d/configs -r
+rm -r $HOME/.palaver.d/Plugins/
+
 mkdir $HOME/.palaver.d/
 mkdir $HOME/.palaver.d/Plugins/
 cp Recognition/config/defaultBin Recognition/bin -r

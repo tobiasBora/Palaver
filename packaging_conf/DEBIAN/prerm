@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# This program is run before the removing
+
+# Remove Symlinks
+
+rm /usr/bin/palaver_hotkey
+rm /usr/bin/palaver_first_run
+rm /usr/bin/palaver_install_gui
+rm /usr/bin/palaver_plugins_manager
+rm /usr/bin/palaver_plugins_sdk
